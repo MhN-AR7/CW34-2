@@ -33,7 +33,7 @@
         <th>${book.id}</th>
         <th>${book.title}</th>
         <th>${book.author}</th>
-        <th>${book.publishedYear}$</th>
+        <th>${book.publishedYear}</th>
     </tr>
 </c:forEach>
 </tbody>
