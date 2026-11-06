@@ -5,7 +5,6 @@ import ir.maktabsharif.library.model.Book;
 import ir.maktabsharif.library.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -33,7 +32,7 @@ public class BookController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<String> addBook(
+    public String addBook(
             @RequestParam("title") String title,
             @RequestParam("author") String author,
             @RequestParam("publishedYear") Integer publishedYear
@@ -46,9 +45,9 @@ public class BookController {
 
         bookService.create(book);
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(book.toString());
+//        return ResponseEntity.status(HttpStatus.CREATED).body(book.toString());
 
-//        return "redirect:all";
+        return "redirect:all";
     }
 
     @RequestMapping("/{id}")

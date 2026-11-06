@@ -24,6 +24,7 @@
     <th>Title</th>
     <th>Author</th>
     <th>Published Year</th>
+    <th>Book Detail</th>
 </tr>
 </thead>
 
@@ -34,6 +35,7 @@
         <th>${book.title}</th>
         <th>${book.author}</th>
         <th>${book.publishedYear}</th>
+        <th><a href="${pageContext.request.contextPath}/books/${book.id}">View Detail</a></th>
     </tr>
 </c:forEach>
 </tbody>
