@@ -60,9 +60,11 @@ public class BookController {
             Book book = bookService.findById(id);
             modelAndView = new ModelAndView("found");
             modelAndView.addObject("book", book);
+            modelAndView.setStatus(HttpStatus.OK);
         } catch (BusinessException e) {
             modelAndView = new ModelAndView("exception");
             modelAndView.addObject("excMessage", e.getMessage());
+            modelAndView.setStatus(HttpStatus.NOT_FOUND);
         }
 
         return modelAndView;
